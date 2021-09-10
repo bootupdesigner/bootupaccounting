@@ -1,0 +1,79 @@
+
+<table class="table">
+<thead>
+  <tr>
+    <th scope="col">Invoice #</th>
+    <th scope="col">First Name</th>
+    <th scope="col">Last Name</th>
+    <th scope="col">Email</th>
+    <th scope="col">Website</th>
+    <th scope="col">Revamp</th>
+    <th scope="col">SEO</th>
+    <th scope="col">Webmail</th>
+    <th scope="col">Description</th>
+    <th scope="col">Cost</th>
+    <th scope="col">Tax</th>
+    <th scope="col">Stripe</th>
+    <th scope="col">Paypal</th>
+    <th scope="col">Fees</th>
+    <th scope="col">Net</th>
+  </tr>
+</thead>
+
+<tbody>
+
+  <% @invoices.each do |invoice| %>
+    
+    <tr>
+      <th scope="row"><%= link_to invoice.id, invoice %></th>
+      <td><%= invoice.first_name %></td>
+      <td><%= invoice.last_name %></td>
+      <td><%= invoice.email %></td>
+
+      <td>
+      <% if invoice.website == true %>
+      <%= invoice.website %>
+      <% end %>
+      </td>
+
+      <td>
+      <% if invoice.revamp == true %>
+      <%= invoice.revamp %>
+      <% end %>
+      </td>
+
+      <td>
+      <% if invoice.seo == true %>
+      <%= invoice.seo %>
+      <% end %>
+      </td>
+
+      <td>
+      <% if invoice.webmail == true %>
+      <%= invoice.webmail %>
+      <% end %>
+      </td>
+
+      <td><%= invoice.description %></td>
+      <td><%= number_to_currency(invoice.cost) %></td>
+      <td><%= number_to_currency(invoice.tax) %></td>
+      
+      <td>
+      <% if invoice.stripe == true %>
+      <%= invoice.stripe %>
+      <% end %>
+      </td>
+      
+      <td>
+      <% if invoice.paypal == true %>
+      <%= invoice.paypal %>
+      <% end %>
+      </td>
+
+      <td><%= number_to_currency(invoice.fees) %></td>
+      <td><%= number_to_currency(invoice.net) %></td>
+    </tr>
+  <% end %>
+</tbody>
+</table>
+<br>

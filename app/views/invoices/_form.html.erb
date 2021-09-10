@@ -1,0 +1,77 @@
+<%= form_with(model: invoice) do |form| %>
+  <% if invoice.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+      <ul>
+        <% invoice.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :website, "Web Design" %>
+    <%= form.check_box :website %>
+    <%= form.label :revamp, "Revamp" %>
+    <%= form.check_box :revamp %>
+    <%= form.label :seo, "SEO Improvement" %>
+    <%= form.check_box :seo %>
+    <%= form.label :webmail, "Email Blast" %>
+    <%= form.check_box :webmail %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cost %>
+    <%= form.text_field :cost %>
+  </div>
+
+  <div class="field">
+    <%= form.label :tax %>
+    <%= form.text_field :tax %>
+  </div>
+
+  <div class="field">
+  <%= form.radio_button :stripe, "Stripe" %>
+    <%= form.label :stripe, "Stripe" %>
+    <%= form.radio_button :paypal, "PayPal" %>
+    <%= form.label :paypal, "PayPal" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :fees %>
+    <%= form.text_field :fees %>
+  </div>
+
+  <div class="field">
+    <%= form.label :net %>
+    <%= form.text_field :net %>
+  </div>
+
+  <%= form.hidden_field :user_id , :value => current_user.id %>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

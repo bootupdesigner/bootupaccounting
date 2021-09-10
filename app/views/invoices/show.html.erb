@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @invoice.first_name %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @invoice.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @invoice.email %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @invoice.website %>
+  </p>
+  <p>
+    <strong>Revamp:</strong>  
+  <%= @invoice.revamp %>
+  </p>
+  <p>
+    <strong>SEO:</strong>  
+  <%= @invoice.seo %>
+  </p>
+  <p>
+    <strong>Webmail:</strong>  
+  <%= @invoice.webmail %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @invoice.description %>
+</p>
+
+<p>
+  <strong>Cost:</strong>
+  <%= @invoice.cost %>
+</p>
+
+<p>
+  <strong>Tax:</strong>
+  <%= @invoice.tax %>
+</p>
+
+<p>
+  <strong>Stripe:</strong>
+  <%= @invoice.stripe %>
+</p>
+
+<p>
+  <strong>PayPal:</strong>
+  <%= @invoice.paypal %>
+</p>
+
+<p>
+  <strong>Fees:</strong>
+  <%= @invoice.fees %>
+</p>
+
+<p>
+  <strong>Net:</strong>
+  <%= @invoice.net %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @invoice.user_id %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> | <%= link_to 'Destroy', invoice_path(@invoice), method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Back', invoices_path %>

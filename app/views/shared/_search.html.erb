@@ -1,0 +1,5 @@
+<%= form_tag "/invoices", method: "GET" do %>
+    <%= label_tag :search_by_email %>
+    <%= text_field_tag :search_by_email, params[:search_by_email] %>
+    <%= submit_tag "Search"  %>
+    <% end %>
