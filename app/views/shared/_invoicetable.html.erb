@@ -23,7 +23,7 @@
 <tbody>
 
   <% @invoices.each do |invoice| %>
-    
+    <% if current_user.id == invoice.user_id || admin %>
     <tr>
       <th scope="row"><%= link_to invoice.id, invoice %></th>
       <td><%= invoice.first_name %></td>
@@ -73,6 +73,7 @@
       <td><%= number_to_currency(invoice.fees) %></td>
       <td><%= number_to_currency(invoice.net) %></td>
     </tr>
+    <% end %>
   <% end %>
 </tbody>
 </table>

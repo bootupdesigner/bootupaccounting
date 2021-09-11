@@ -2,6 +2,13 @@ class Invoice < ApplicationRecord
   belongs_to :user
   before_save :downcase_fields, :calculate_invoice_fees
 
+def self.search(search)
+  if search
+    where(["first_name LIKE ?", "%#{search}%"])
+  else
+    all
+  end
+end
 
   def calculate_invoice_fees
   invoice_tax = self.cost * 0.07

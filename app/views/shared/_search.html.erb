@@ -1,5 +1,5 @@
-<%= form_tag "/invoices", method: "GET" do %>
-    <%= label_tag :search_by_email %>
-    <%= text_field_tag :search_by_email, params[:search_by_email] %>
-    <%= submit_tag "Search"  %>
+<%= form_with(url: '/invoices', method: 'get', local: true) do %>
+    <%= label_tag(:search, "Search by first name:") %>
+    <%= text_field_tag(:search) %>
+    <%= submit_tag("search") %>
     <% end %>

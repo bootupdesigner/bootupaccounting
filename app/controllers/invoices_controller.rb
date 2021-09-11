@@ -3,11 +3,8 @@ class InvoicesController < ApplicationController
 
   # GET /invoices or /invoices.json
   def index
-    @invoices = Invoice.all
-
-    if params[:search_by_email] && params[:search_by_email] != ""
-      @invoices = @invoices.where("email like ?", "%# {params[:search_by_email]}%")
-    end
+    # @invoices = Invoice.all
+    @invoices = Invoice.search(params[:search])
 end
 
   # GET /invoices/1 or /invoices/1.json
