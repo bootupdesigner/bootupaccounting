@@ -1,7 +1,7 @@
-<div class="container d-flex w-100 justify-content-center">
+<div class="container w-100 d-flex justify-content-center border border-dark border-1 rounded-3 print">
 
   <div class="grid">
-    <h1 class="g-col-12 mx-3">Payment Invoice</h1>
+    <h1 class="g-col-12">Payment Invoice</h1>
 
     <p class="g-col-12 text-right"> 
       <%= @invoice.first_name %> <%= @invoice.last_name %>
@@ -27,7 +27,7 @@
       <p><strong>Webmail:</strong> <%= @invoice.webmail %></p>
     <div>
 
-    <h4 class="g-col-12 text-center">Billing Details</h4>
+    <h4 class="g-col-12 text-center">Billing Information</h4>
 
     <div class="g-col-12 text-right">
       <p><strong>Cost:</strong> <%= number_to_currency(@invoice.cost) %></p>
@@ -45,5 +45,5 @@
 <div>
 
 <%= link_to 'Edit', edit_invoice_path(@invoice) %> | <%= link_to 'Destroy', invoice_path(@invoice), method: :delete, data: { confirm: 'Are you sure?' } %> |
-<%= link_to 'Back', invoices_path %>
+<%= link_to 'Back', invoices_path %> <p onclick="window.print()">Print this invoice</p>
 </div>
